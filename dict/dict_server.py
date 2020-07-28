@@ -9,10 +9,19 @@ HOST = '0.0.0.0'
 PORT = 8000
 ADDR= (HOST,PORT)
 
+#服务端注册处理
+def do_register(c,data):
+    tmp = data.split(' ')
+    name = tmp[1]
+    passwd = tmp[2]
+
+#具体客户段请求
 def request(c):
     while True:
         data = c.recv(1024).decode()
         print(c.getpeername(),':', data)
+        if data[0] == 'R':
+            do_register(c,data)
 
 
 #搭建网络
@@ -48,4 +57,4 @@ def main():
 
 
 if __name__ == '__main__':
-    #main()
+    main()
