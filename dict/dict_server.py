@@ -1,4 +1,5 @@
 
+
 from socket import *
 from multiprocessing import Process
 import signal,sys
@@ -71,6 +72,7 @@ def do_login(c,data):
 
 
 
+
 #具体客户段请求
 def request(c):
     db.create_cursor()
@@ -87,6 +89,7 @@ def request(c):
             do_query(c,data)
         elif data[0] == 'H':
             do_hist(c,data)
+
 
 
 #搭建网络

@@ -8,6 +8,7 @@ ADDR= (HOST,PORT)
 s = socket()
 s.connect(ADDR)
 
+
 #查历史记录
 def do_hist(name):
     msg = "H " + name
