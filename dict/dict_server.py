@@ -120,7 +120,7 @@ def main():
 
         #为客户段创建子进程
         p = Process(target=request,args=(c,))
-        p.daemon = True
+        p.daemon = True #因子进程设置了daemon属性，主进程结束，它们就随着结束了。
         p.start()
 
 
